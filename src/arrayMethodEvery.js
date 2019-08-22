@@ -8,9 +8,7 @@ function applyCustomEvery() {
     let count = 0;
 
     for (let i = 0; i < this.length; i++) {
-      if (callback(this[i], i, this)) {
-        count++;
-      }
+      count += callback(this[i], i, this);
     }
 
     return count === this.length;
