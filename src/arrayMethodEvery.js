@@ -5,7 +5,15 @@
  */
 function applyCustomEvery() {
   [].__proto__.every2 = function(callback) {
-    // write code here
+    let valueEvery = true;
+
+    for (let i = 0; i < this.length; i++) {
+      if (!callback(this[i], i, this)) {
+        valueEvery = false;
+      }
+    }
+
+    return valueEvery;
   };
 }
 
