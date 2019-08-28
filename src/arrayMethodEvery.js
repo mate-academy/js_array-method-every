@@ -10,6 +10,7 @@ function applyCustomEvery() {
         return false;
       }
     }
+
     return true;
   };
 };
