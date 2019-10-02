@@ -5,7 +5,7 @@
  */
 function applyCustomEvery() {
   [].__proto__.every2 = function(callback) {
-    // write code here
+    return !this.map((item, index, arr) => callback(item, index, arr)).includes(false);
   };
 }
 
