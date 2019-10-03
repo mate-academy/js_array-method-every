@@ -5,7 +5,13 @@
  */
 function applyCustomEvery() {
   [].__proto__.every2 = function(callback) {
-    return !this.map((item, index, arr) => callback(item, index, arr)).includes(false);
+    for (let i = 0; i < this.length; i++) {
+      if (callback(this[i], i, this)) {
+        continue;
+      }
+      return false;
+    }
+    return true;
   };
 }
 
