@@ -9,12 +9,11 @@ function applyCustomEvery() {
       return true;
     } else {
       for (let i = 0; i < this.length; i++) {
-        if (callback(this[i], i, this)) {
-          return true;
-        } else {
+        if (!callback(this[i], i, this)) {
           return false;
         }
       }
+      return true;
     }
   };
 }
