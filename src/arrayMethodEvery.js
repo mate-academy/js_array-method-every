@@ -9,7 +9,7 @@ function applyCustomEvery() {
       const item = this[i];
       const index = i;
       const arr = this;
-      if (callback(item, index, arr) === true) {
+      if (callback(item, index, arr)) {
         continue;
       }
       return false;
