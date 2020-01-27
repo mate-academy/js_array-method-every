@@ -3,6 +3,7 @@
 const applyCustomEvery = require('./arrayMethodEvery');
 
 const source = [0, 10, 20, 30];
+
 applyCustomEvery();
 
 test('every2 is added to [].__proto__', () => {
