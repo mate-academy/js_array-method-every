@@ -5,7 +5,23 @@
  */
 function applyCustomEvery() {
   [].__proto__.every2 = function(callback) {
-    // write code here
+    const items = this;
+    let count = 0;
+
+    if (items.length < 1) {
+      return true;
+    }
+
+    for (let i = 0; i < items.length; i++) {
+      if (callback(items[i], i, items)) {
+        count++;
+      }
+      if (count === items.length) {
+        return true;
+      }
+    }
+
+    return false;
   };
 }
 
