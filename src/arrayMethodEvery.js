@@ -6,10 +6,12 @@
 function applyCustomEvery() {
   [].__proto__.every2 = function(callback) {
     for (let i = 0; i < this.length; i++) {
-      return !!callback(this[i], i, this);
+      if (!callback(this[i], i, this)) {
+        return false;
+      }
     }
 
-    return !0;
+    return true;
   };
 }
 
