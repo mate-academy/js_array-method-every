@@ -9,8 +9,6 @@ function applyCustomEvery() {
       if (!callback(this[i], i, this)) {
         return false;
       }
-
-      return true;
     }
 
     return true;
