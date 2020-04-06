@@ -5,23 +5,14 @@
  */
 function applyCustomEvery() {
   [].__proto__.every2 = function(callback) {
-    if (this.length === 0) {
-      return true;
-    }
-
-    let count = 0;
-
     for (let i = 0; i < this.length; i++) {
       if (callback(this[i], i, this)) {
-        count++;
+      } else {
+        return false;
       }
     }
 
-    if (count === this.length) {
-      return true;
-    }
-
-    return false;
+    return true;
   };
 }
 
