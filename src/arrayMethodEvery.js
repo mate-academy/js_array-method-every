@@ -4,8 +4,14 @@
  * Implement method Every
  */
 function applyCustomEvery() {
-  [].__proto__.every2 = function(callback) {
-    // write code here
+  Array.prototype.every2 = function(callback) {
+    for (let i = 0; i < this.length; i++) {
+      if (!callback(this[i], i, this)) {
+        return false;
+      }
+    }
+
+    return true;
   };
 }
 
