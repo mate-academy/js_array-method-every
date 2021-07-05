@@ -5,7 +5,17 @@
  */
 function applyCustomEvery() {
   [].__proto__.every2 = function(callback) {
-    // write code here
+    const arr = this;
+    let counter = 0;
+
+    for (const item of arr) {
+      if (!callback(item, counter, arr)) {
+        return false;
+      }
+      counter++;
+    }
+
+    return true;
   };
 }
 
